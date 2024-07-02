@@ -25,7 +25,7 @@ function changeBGImage() {
 function changeTLImage() {
     console.log("changeTLImage called");
     console.log(this.id);
-    puzzlePieces.style.backgroundImage = `url('./images/topLeft${this.id}.jpg')`;
+    puzzlePieces.style.image = `url('./images/topLeft1.jpg')`;
 }
 
 function handleStartDrag() {
