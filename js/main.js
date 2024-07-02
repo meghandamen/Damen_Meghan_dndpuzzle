@@ -22,6 +22,12 @@ function changeBGImage() {
     //puzzleBoard.style.backgroundImage = `url('./images/backGround${event.currentTarget.id}.jpg)`;
 }
 
+function changeTLImage() {
+    console.log("changeTLImage called");
+    console.log(this.id);
+    puzzlePieces.style.backgroundImage = `url('./images/topLeft${this.id}.jpg')`;
+}
+
 function handleStartDrag() {
     console.log(`started dragging ${this}`);
     draggedPiece = this;
@@ -37,7 +43,7 @@ function handleDrop() {
 }
 
 //event lisnerer
-theButtons.forEach(button => button.addEventListener("click", changeBGImage));
+theButtons.forEach(button => button.addEventListener("click", changeBGImage, changeTLImage));
 
 puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
 
