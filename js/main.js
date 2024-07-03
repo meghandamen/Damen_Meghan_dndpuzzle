@@ -5,6 +5,7 @@ const theButtons = document.querySelectorAll("#buttonHolder img");
 const puzzleBoard = document.querySelector(".puzzle-board");
 const puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
 const dropZones = document.querySelectorAll(".drop-zone");
+const changePuzzlePiece = document.querySelectorAll(".puzzle-pieces");
 let draggedPiece;
 
 console.log(theButtons);
@@ -20,12 +21,13 @@ function changeBGImage() {
     //method 2
     //console.log(evet.curremtTarget.id);
     //puzzleBoard.style.backgroundImage = `url('./images/backGround${event.currentTarget.id}.jpg)`;
-}
 
-function changeTLImage() {
-    console.log("changeTLImage called");
-    console.log(this.id);
-    puzzlePieces.style.image = `url('./images/topLeft1.jpg')`;
+    puzzlePieces.forEach(piece => changePuzzlePiece.appendChild(piece))
+
+    puzzlePieces[0].src = `./images/topLeft${this.id}.jpg`;
+    puzzlePieces[1].src = `./images/topRight${this.id}.jpg`;
+    puzzlePieces[2].src = `./images/bottomLeft${this.id}.jpg`;
+    puzzlePieces[3].src = `./images/bottomRight${this.id}.jpg`;
 }
 
 function handleStartDrag() {
