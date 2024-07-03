@@ -5,7 +5,7 @@ const theButtons = document.querySelectorAll("#buttonHolder img");
 const puzzleBoard = document.querySelector(".puzzle-board");
 const puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
 const dropZones = document.querySelectorAll(".drop-zone");
-const changePuzzlePiece = document.querySelectorAll(".puzzle-pieces");
+const changePuzzlePiece = document.querySelector(".puzzle-pieces");
 let draggedPiece;
 
 console.log(theButtons);
