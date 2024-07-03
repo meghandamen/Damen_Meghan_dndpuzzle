@@ -22,8 +22,11 @@ function changeBGImage() {
     //console.log(evet.curremtTarget.id);
     //puzzleBoard.style.backgroundImage = `url('./images/backGround${event.currentTarget.id}.jpg)`;
 
-    puzzlePieces.forEach(piece => changePuzzlePiece.appendChild(piece))
 
+    //bug fix 1
+    puzzlePieces.forEach(piece => changePuzzlePiece.appendChild(piece));
+
+    //changes piecs along with the background
     puzzlePieces[0].src = `./images/topLeft${this.id}.jpg`;
     puzzlePieces[1].src = `./images/topRight${this.id}.jpg`;
     puzzlePieces[2].src = `./images/bottomLeft${this.id}.jpg`;
@@ -45,7 +48,7 @@ function handleDrop() {
 }
 
 //event lisnerer
-theButtons.forEach(button => button.addEventListener("click", changeBGImage, changeTLImage));
+theButtons.forEach(button => button.addEventListener("click", changeBGImage));
 
 puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDrag));
 
