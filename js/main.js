@@ -1,15 +1,13 @@
 console.log("Javascript connected");
 
 //variables
-const reset = document.querySelectorAll(".resetBut")
 const theButtons = document.querySelectorAll("#buttonHolder img");
 const puzzleBoard = document.querySelector(".puzzle-board");
 const puzzlePieces = document.querySelectorAll(".puzzle-pieces img");
 const dropZones = document.querySelectorAll(".drop-zone");
 
 const changePuzzlePiece = document.querySelector(".puzzle-pieces");
-const resetB = document.querySelector("#resetBut");
-
+const resetBoard = document.querySelector("#resetBut")
 let draggedPiece;
 
 console.log(theButtons);
@@ -43,21 +41,20 @@ function handleStartDrag() {
 }
 
 function handleOver(e) {
+    console.log("dragged over")
     e.preventDefault();
-    console.log("dragged over");
-    
 }
 
 function handleDrop() {
     //bug fix 2
-    if(this.childern.length >= 1) {
-        console.log("this spot is full");
+    if(this.children.length >= 1) {
         return;
     }
-    
-    this.appendChild(draggedPiece);
-}
 
+    this.appendChild(draggedPiece); 
+}  
+
+//bug fix 2
 function reset() {
     puzzlePieces.forEach(piece => changePuzzlePiece.appendChild(piece));
 }
@@ -71,5 +68,4 @@ dropZones.forEach(zone => zone.addEventListener("dragover", handleOver));
 
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
 
-resetB.addEventListener("click", reset);
-
+resetBoard.addEventListener("click", reset);
